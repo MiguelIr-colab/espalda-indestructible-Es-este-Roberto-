@@ -25,7 +25,7 @@ const Equipo = () => {
         "Estenosis Lumbar",
         "Protusión Discal",
       ],
-      image: roberto,
+      image: teamroberto,
     },
 
     {
