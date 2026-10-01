@@ -1,9 +1,8 @@
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 
-// Importación de imágenes
 import teamRoberto from "@/assets/roberto-1.png";
 import teamMaria from "@/assets/Asun.png";
 import teamHugo from "@/assets/maria-2.png";
@@ -44,78 +43,83 @@ const Equipo = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[hsl(var(--light-gray))]">
-      <Helmet>
-        <title>Nuestro Equipo - Espalda Indestructible</title>
-        <meta
-          name="description"
-          content="Conoce al equipo de profesionales especializados en patologías de columna y dolor neuropático de Espalda Indestructible."
-        />
-        <link rel="canonical" href="https://espaldaindestructible.com/equipo" />
-      </Helmet>
-      <Header />
-      <main className="pt-20">
-        <section className="py-20 bg-[hsl(var(--light-gray))]">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h1 className="text-4xl lg:text-6xl font-bold mb-6 text-secondary-foreground">
-                Nuestro Equipo
-              </h1>
-              <p className="text-xl text-secondary-foreground/70 max-w-3xl mx-auto">
-                Profesionales especializados en patologías de columna y dolor
-                neuropático.
-              </p>
-            </div>
+    <HelmetProvider>
+      <div className="min-h-screen bg-gray-100">
+        <Helmet>
+          <title>Nuestro Equipo - Espalda Indestructible</title>
+          <meta
+            name="description"
+            content="Conoce al equipo de profesionales especializados en patologías de columna y dolor neuropático de Espalda Indestructible."
+          />
+          <link
+            rel="canonical"
+            href="https://espaldaindestructible.com/equipo"
+          />
+        </Helmet>
+        <Header />
+        <main className="pt-20">
+          <section className="py-20 bg-gray-100">
+            <div className="container mx-auto px-4">
+              <div className="text-center mb-16">
+                <h1 className="text-4xl lg:text-6xl font-bold mb-6 text-gray-900">
+                  Nuestro Equipo
+                </h1>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                  Profesionales especializados en patologías de columna y dolor
+                  neuropático.
+                </p>
+              </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-              {teamMembers.map((member, index) => (
-                <Card
-                  key={index}
-                  className="bg-background border-border p-6 flex flex-col"
-                >
-                  <div className="text-center mb-6">
-                    <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full">
-                      <img
-                        src={member.image}
-                        alt={member.name}
-                        className="w-full h-full object-cover"
-                      />
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+                {teamMembers.map((member, index) => (
+                  <Card
+                    key={index}
+                    className="bg-white border border-gray-200 p-6 flex flex-col shadow-sm"
+                  >
+                    <div className="text-center mb-6">
+                      <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full">
+                        <img
+                          src={member.image}
+                          alt={member.name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <h2 className="text-xl font-bold text-gray-900 mb-2">
+                        {member.name}
+                      </h2>
+                      <p className="text-blue-600 font-semibold text-sm mb-3">
+                        {member.role}
+                      </p>
                     </div>
-                    <h2 className="text-xl font-bold text-foreground mb-2">
-                      {member.name}
-                    </h2>
-                    <p className="text-primary font-semibold text-sm mb-3">
-                      {member.role}
+
+                    <p className="text-gray-600 text-sm mb-6 text-center flex-grow">
+                      {member.description}
                     </p>
-                  </div>
 
-                  <p className="text-muted-foreground text-sm mb-6 text-center flex-grow">
-                    {member.description}
-                  </p>
-
-                  <div className="border-t border-border pt-6">
-                    <h3 className="text-sm font-bold text-foreground mb-3 text-center">
-                      Especialidades
-                    </h3>
-                    <div className="flex flex-wrap gap-2 justify-center">
-                      {member.specialties.map((specialty, i) => (
-                        <span
-                          key={i}
-                          className="bg-primary text-primary-foreground px-3 py-1 rounded-md font-semibold text-xs"
-                        >
-                          {specialty}
-                        </span>
-                      ))}
+                    <div className="border-t border-gray-200 pt-6">
+                      <h3 className="text-sm font-bold text-gray-900 mb-3 text-center">
+                        Especialidades
+                      </h3>
+                      <div className="flex flex-wrap gap-2 justify-center">
+                        {member.specialties.map((specialty, i) => (
+                          <span
+                            key={i}
+                            className="bg-blue-600 text-white px-3 py-1 rounded-md font-semibold text-xs"
+                          >
+                            {specialty}
+                          </span>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                </Card>
-              ))}
+                  </Card>
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </div>
+          </section>
+        </main>
+        <Footer />
+      </div>
+    </HelmetProvider>
   );
 };
 
