@@ -4,10 +4,10 @@ import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 
 // Importaciones de imágenes
-import teamRoberto from "@/assets/roberto-1.png";
-import teamMaria from "@/assets/Asun.png";
-import teamHugo from "@/assets/maria-2.png";
-import teamKevin from "@/assets/Kevin.png";
+import teamRoberto from "@/assets/team-roberto.png";
+import teamMaria from "@/assets/team-maria.png";
+import teamHugo from "@/assets/team-hugo.png";
+import teamKevin from "@/assets/team-kevin.png";
 
 const Equipo = () => {
   const teamMembers = [
