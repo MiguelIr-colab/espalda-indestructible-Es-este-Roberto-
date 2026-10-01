@@ -2,45 +2,55 @@ import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
+
+// Importación de imágenes
 import teamRoberto from "@/assets/roberto-1.png";
 import teamMaria from "@/assets/Asun.png";
-import teamCarlos from "@/assets/team-carlos.png";
 import teamHugo from "@/assets/maria-2.png";
 import teamKevin from "@/assets/Kevin.png";
-import teamLaura from "@/assets/team-laura.png";
 
 const Equipo = () => {
-  const teamMembers = [{
-    name: "Roberto Galván",
-    role: "Ldo Ciencias de la Actividad Física",
-    description: "Experto en readaptación de patologías de columna. Experto en neuromecánica. Biomecánica deportiva.",
-    specialties: ["Hernia Discal", "Estenosis Lumbar", "Protusión Discal"],
-    image: roberto-1
-  }, {
-    name: "Asun Venancio",
-    role: "Fisioterapeuta Colegiada: 39/1156",
-    description: "Master en Neurorehabilitación.",
-    specialties: ["Ejercicio terapéutico", "Dolor Neuropático"],
-    image: Asun
-  }, {
-    name: "Kevin Díaz",
-    role: "Fisioterapeuta colegiado 10944",
-    description: "Investigador clínico. Master en Fisioterapia del sistema músculo esquelético.",
-    specialties: ["Investigación", "Patologías de columna"],
-    image: Kevin
-  }, {
-    name: "María Corripio",
-    role: "Doble grado en Fisioterapia y Ciencias de la Actividad Física",
-    description: "Master en Fisioterapia Neurológica.",
-    specialties: ["Ejercicio Terapéutico", "Dolor Neuropático"],
-    image: maria-2
-  }];
+  const teamMembers = [
+    {
+      name: "Roberto Galván",
+      role: "Ldo Ciencias de la Actividad Física",
+      description:
+        "Experto en readaptación de patologías de columna. Experto en neuromecánica. Biomecánica deportiva.",
+      specialties: ["Hernia Discal", "Estenosis Lumbar", "Protusión Discal"],
+      image: teamRoberto,
+    },
+    {
+      name: "Asun Venancio",
+      role: "Fisioterapeuta Colegiada: 39/1156",
+      description: "Master en Neurorehabilitación.",
+      specialties: ["Ejercicio terapéutico", "Dolor Neuropático"],
+      image: teamMaria,
+    },
+    {
+      name: "Kevin Díaz",
+      role: "Fisioterapeuta colegiado 10944",
+      description:
+        "Investigador clínico. Master en Fisioterapia del sistema músculo esquelético.",
+      specialties: ["Investigación", "Patologías de columna"],
+      image: teamKevin,
+    },
+    {
+      name: "María Corripio",
+      role: "Doble grado en Fisioterapia y Ciencias de la Actividad Física",
+      description: "Master en Fisioterapia Neurológica.",
+      specialties: ["Ejercicio Terapéutico", "Dolor Neuropático"],
+      image: teamHugo,
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-[hsl(var(--light-gray))]">
       <Helmet>
         <title>Nuestro Equipo - Espalda Indestructible</title>
-        <meta name="description" content="Conoce al equipo de profesionales especializados en patologías de columna y dolor neuropático de Espalda Indestructible." />
+        <meta
+          name="description"
+          content="Conoce al equipo de profesionales especializados en patologías de columna y dolor neuropático de Espalda Indestructible."
+        />
         <link rel="canonical" href="https://espaldaindestructible.com/equipo" />
       </Helmet>
       <Header />
@@ -52,16 +62,24 @@ const Equipo = () => {
                 Nuestro Equipo
               </h1>
               <p className="text-xl text-secondary-foreground/70 max-w-3xl mx-auto">
-                Profesionales especializados en patologías de columna y dolor neuropático.
+                Profesionales especializados en patologías de columna y dolor
+                neuropático.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
               {teamMembers.map((member, index) => (
-                <Card key={index} className="bg-background border-border p-6 flex flex-col">
+                <Card
+                  key={index}
+                  className="bg-background border-border p-6 flex flex-col"
+                >
                   <div className="text-center mb-6">
                     <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full">
-                      <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     <h2 className="text-xl font-bold text-foreground mb-2">
                       {member.name}
@@ -81,7 +99,10 @@ const Equipo = () => {
                     </h3>
                     <div className="flex flex-wrap gap-2 justify-center">
                       {member.specialties.map((specialty, i) => (
-                        <span key={i} className="bg-primary text-primary-foreground px-3 py-1 rounded-md font-semibold text-xs">
+                        <span
+                          key={i}
+                          className="bg-primary text-primary-foreground px-3 py-1 rounded-md font-semibold text-xs"
+                        >
                           {specialty}
                         </span>
                       ))}
