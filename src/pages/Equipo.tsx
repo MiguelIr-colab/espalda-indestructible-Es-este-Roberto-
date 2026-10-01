@@ -15,37 +15,25 @@ const Equipo = () => {
     role: "Ldo Ciencias de la Actividad Física",
     description: "Experto en readaptación de patologías de columna. Experto en neuromecánica. Biomecánica deportiva.",
     specialties: ["Hernia Discal", "Estenosis Lumbar", "Protusión Discal"],
-    image: teamRoberto
+    image: roberto-1
   }, {
     name: "Asun Venancio",
     role: "Fisioterapeuta Colegiada: 39/1156",
     description: "Master en Neurorehabilitación.",
     specialties: ["Ejercicio terapéutico", "Dolor Neuropático"],
-    image: teamMaria
+    image: Asun
   }, {
     name: "Kevin Díaz",
     role: "Fisioterapeuta colegiado 10944",
     description: "Investigador clínico. Master en Fisioterapia del sistema músculo esquelético.",
     specialties: ["Investigación", "Patologías de columna"],
-    image: teamKevin
+    image: Kevin
   }, {
     name: "María Corripio",
     role: "Doble grado en Fisioterapia y Ciencias de la Actividad Física",
     description: "Master en Fisioterapia Neurológica.",
     specialties: ["Ejercicio Terapéutico", "Dolor Neuropático"],
-    image: teamHugo
-  }, {
-    name: "Ricardo Romero",
-    role: "Fisioterapeuta colegiado: 12264",
-    description: "Master en Fisioterapia deportiva.",
-    specialties: ["Fisioterapia invasiva", "Ecografía músculo-esquelética"],
-    image: teamCarlos
-  }, {
-    name: "Olivia Valerón",
-    role: "Márketing y comunicación",
-    description: "Master en Customer Relationship Management.",
-    specialties: ["CX", "CRM"],
-    image: teamLaura
+    image: maria-2
   }];
 
   return (
