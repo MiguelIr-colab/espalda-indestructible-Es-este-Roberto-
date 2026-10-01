@@ -2,10 +2,12 @@ import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
-import teamRoberto from "@/assets/team-roberto.png";
-import teamMaria from "@/assets/team-maria.png";
-import teamHugo from "@/assets/team-hugo.png";
-import teamKevin from "@/assets/team-kevin.png";
+import teamRoberto from "@/assets/roberto-1.png";
+import teamMaria from "@/assets/Asun.png";
+import teamCarlos from "@/assets/team-carlos.png";
+import teamHugo from "@/assets/maria-2.png";
+import teamKevin from "@/assets/Kevin.png";
+import teamLaura from "@/assets/team-laura.png";
 
 const Equipo = () => {
   const teamMembers = [{
@@ -27,13 +29,27 @@ const Equipo = () => {
     specialties: ["Investigación", "Patologías de columna"],
     image: teamKevin
   }, {
-    name: "Hugo Fondevilla",
-    role: "Fisioterapeuta colegiado: 1998 COFISPA",
+    name: "María Corripio",
+    role: "Doble grado en Fisioterapia y Ciencias de la Actividad Física",
     description: "Master en Fisioterapia Neurológica.",
     specialties: ["Ejercicio Terapéutico", "Dolor Neuropático"],
     image: teamHugo
+  }, {
+    name: "Ricardo Romero",
+    role: "Fisioterapeuta colegiado: 12264",
+    description: "Master en Fisioterapia deportiva.",
+    specialties: ["Fisioterapia invasiva", "Ecografía músculo-esquelética"],
+    image: teamCarlos
+  }, {
+    name: "Olivia Valerón",
+    role: "Márketing y comunicación",
+    description: "Master en Customer Relationship Management.",
+    specialties: ["CX", "CRM"],
+    image: teamLaura
   }];
-  return <div className="min-h-screen bg-[hsl(var(--light-gray))]">
+
+  return (
+    <div className="min-h-screen bg-[hsl(var(--light-gray))]">
       <Helmet>
         <title>Nuestro Equipo - Espalda Indestructible</title>
         <meta name="description" content="Conoce al equipo de profesionales especializados en patologías de columna y dolor neuropático de Espalda Indestructible." />
@@ -53,7 +69,8 @@ const Equipo = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-              {teamMembers.map((member, index) => <Card key={index} className="bg-background border-border p-6 flex flex-col">
+              {teamMembers.map((member, index) => (
+                <Card key={index} className="bg-background border-border p-6 flex flex-col">
                   <div className="text-center mb-6">
                     <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full">
                       <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
@@ -75,19 +92,22 @@ const Equipo = () => {
                       Especialidades
                     </h3>
                     <div className="flex flex-wrap gap-2 justify-center">
-                      {member.specialties.map((specialty, i) => <span key={i} className="bg-primary text-primary-foreground px-3 py-1 rounded-md font-semibold text-xs">
+                      {member.specialties.map((specialty, i) => (
+                        <span key={i} className="bg-primary text-primary-foreground px-3 py-1 rounded-md font-semibold text-xs">
                           {specialty}
-                        </span>)}
+                        </span>
+                      ))}
                     </div>
                   </div>
-
-                  
-                </Card>)}
+                </Card>
+              ))}
             </div>
           </div>
         </section>
       </main>
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default Equipo;
